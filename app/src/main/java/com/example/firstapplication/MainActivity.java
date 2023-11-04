@@ -8,39 +8,51 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editText;
     AppCompatButton button;
     TextView result;
     ImageView image;
-    RadioButton green;
-    RadioButton red;
-    RadioButton yellow;
-    RadioGroup group;
+
     LinearLayout layout;
+
+    ToggleButton toggleButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editText = findViewById(R.id.editTextName);
         button = findViewById(R.id.buttonOk);
         result = findViewById(R.id.textViewResult);
         image = findViewById(R.id.imageExample);
 
-        group = findViewById(R.id.group);
-        green = findViewById(R.id.radioButtonGreen);
-        red = findViewById(R.id.radioButtonRed);
-        yellow = findViewById(R.id.radioButtonYello);
+        toggleButton = findViewById(R.id.toggleButtonShow);
+
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    image.setVisibility(View.INVISIBLE);
+                    result.setText("Image is hided");
+                } else {
+                    image.setVisibility(View.VISIBLE);
+                    result.setText("Image is shown");
+
+                }
+            }
+        });
+
+
         layout = findViewById(R.id.linearLayout);
 
 
@@ -49,14 +61,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(green.isChecked()){
-                    layout.setBackgroundColor(Color.GREEN);
-                } else if(red.isChecked()){
-                    layout.setBackgroundColor(Color.RED);
-
-                } else if(yellow.isChecked()) {
-                    layout.setBackgroundColor(Color.YELLOW);
-                }
 
             }
 

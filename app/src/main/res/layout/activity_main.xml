@@ -17,44 +17,13 @@
         android:scaleType="center"
         android:src="@drawable/portal2_logo" />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="Please Write your name"
-        android:inputType="text" />
-
-    <RadioGroup
-        android:id="@+id/group"
+    <ToggleButton
+        android:id="@+id/toggleButtonShow"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radioButtonGreen"
-            android:checked="true"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Green" />
-
-        <RadioButton
-            android:id="@+id/radioButtonRed"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Red" />
-
-        <RadioButton
-            android:id="@+id/radioButtonYello"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Yellow" />
-    </RadioGroup>
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="Hide Image"
+        android:textOn="Show Image" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonOk"
