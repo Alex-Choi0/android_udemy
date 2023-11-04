@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">FirstApplication</string>
-    <string-array name="countries">
-        <item>England</item>
-        <item>Netherlands</item>
-        <item>Germany</item>
-        <item>Belgium</item>
-        <item>Finland</item>
-        <item>America</item>
-        <item>Thailand</item>
-        <item>China</item>
-        <item>Mexico</item>
-        <item>Syria</item>
-        <item>Iraq</item>
-        <item>Russia</item>
-        <item>Spain</item>
-        <item>Australia</item>
-        <item>Turkey</item>
-        <item>Canada</item>
-    </string-array>
+<!--    <string-array name="countries">-->
+<!--        <item>England</item>-->
+<!--        <item>Netherlands</item>-->
+<!--        <item>Germany</item>-->
+<!--        <item>Belgium</item>-->
+<!--        <item>Finland</item>-->
+<!--        <item>America</item>-->
+<!--        <item>Thailand</item>-->
+<!--        <item>China</item>-->
+<!--        <item>Mexico</item>-->
+<!--        <item>Syria</item>-->
+<!--        <item>Iraq</item>-->
+<!--        <item>Russia</item>-->
+<!--        <item>Spain</item>-->
+<!--        <item>Australia</item>-->
+<!--        <item>Turkey</item>-->
+<!--        <item>Canada</item>-->
+<!--    </string-array>-->
 </resources>
