@@ -7,6 +7,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -25,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout layout;
 
-    ToggleButton toggleButton;
+    Spinner spinner;
+    ArrayAdapter adapter;
 
 
     @Override
@@ -35,36 +39,32 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.buttonOk);
         result = findViewById(R.id.textViewResult);
         image = findViewById(R.id.imageExample);
+        spinner = findViewById(R.id.spinner);
+        spinner = findViewById(R.id.spinner);
 
-        toggleButton = findViewById(R.id.toggleButtonShow);
+        adapter = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    image.setVisibility(View.INVISIBLE);
-                    result.setText("Image is hided");
-                } else {
-                    image.setVisibility(View.VISIBLE);
-                    result.setText("Image is shown");
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String textView = parent.getItemAtPosition(position).toString();
+                result.setText(textView);
+            }
 
-                }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
+
 
 
         layout = findViewById(R.id.linearLayout);
 
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-            }
-
-
-        });
     }
 }
